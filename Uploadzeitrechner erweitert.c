@@ -21,17 +21,16 @@ int main()
 	int dateizeile_1 = 0;
 	char dateieinheit[200];
 
-	printf("\nBitte waehle die Groesseneinheit aus"); //Hier wird der User gefragt, die einheit der Datei auszuwählen
-	printf("\nAuswahl 1 ist Kbyte = Kilobyte");		  //Das dient dazu damit nicht Text ausgewertet werden muss
+	printf("\nBitte waehle die Groesseneinheit aus"); 					//Hier wird der User gefragt, die einheit der Datei auszuwählen
+	printf("\nAuswahl 1 ist Kbyte = Kilobyte");		  				//Das dient dazu damit nicht Text ausgewertet werden muss
 	printf("\nAuswahl 2 ist Mbyte = Megabyte");
 	printf("\nAuswahl 3 ist Gbyte = Gigabyte");
 	printf("\nAuswahl 4 ist Tbyte = Terabyte");
 
 	do {
 		printf("\nDeine Auswahl ist: ");
-		scanf("%d", &auswahl);						//Das hier ist eine Eingabeprüfung welche
-		while (getchar() != '\n');					//in einer schlaufe läuft damit die eingabe nur 1 bis 4 ist
-		if (auswahl <= 0 || auswahl > 4)
+		scanf("%d", &auswahl);								//Das hier ist eine Eingabeprüfung welche				
+		if (auswahl <= 0 || auswahl > 4)						//in einer schlaufe läuft damit die eingabe nur 1 bis 4 ist
 		{
 			printf("\nBitte gib eine Zahl von 1 bis 4 nur an!");
 		}
@@ -49,15 +48,15 @@ int main()
 		printf("\nMegabyte");
 		printf("\nGigabyte");
 		printf("\nTerabyte");	
-		printf("------------------");	//Das hier ist eine Fehlermeldung mit der Anleitung Data_1.txt anzulegen
-		return 1;						//da diese Datei fehlt um im Code weiter zu kommen
+		printf("------------------");							//Das hier ist eine Fehlermeldung mit der Anleitung Data_1.txt anzulegen
+		return 1;									//da diese Datei fehlt um im Code weiter zu kommen
 	}
 
 	while (fgets(dateieinheit, sizeof(dateieinheit), fp))
 	{
-		dateizeile_1++;											//ist die Datei vorhanden wird diese hier geöffnet
+		dateizeile_1++;									//ist die Datei vorhanden wird diese hier geöffnet
 		if (dateizeile_1 == auswahl) {							//im reinem Lesemodus wo je nach auswahl die bestimmte 
-			dateieinheit[strcspn(dateieinheit, "\n")] = '\0';	//Zeile ausgelesen wird und abgespeichert wird
+			dateieinheit[strcspn(dateieinheit, "\n")] = '\0';			//Zeile ausgelesen wird und abgespeichert wird
 			break;
 		}
 	}
@@ -70,8 +69,8 @@ int main()
 	switch (auswahl)
 	{
 	case 1:
-		printf("\nDie Datei ist %d %s gross\n", groesse, dateieinheit);		//In diesen Fällen wird nur die Dateigröße wiedergegeben
-		break;																//mit der jeweiligen einheit
+		printf("\nDie Datei ist %d %s gross\n", groesse, dateieinheit);			//In diesen Fällen wird nur die Dateigröße wiedergegeben
+		break;										//mit der jeweiligen einheit
 
 	case 2:
 		printf("\nDie Datei ist %d %s gross\n", groesse, dateieinheit);
@@ -85,24 +84,23 @@ int main()
 		printf("\nDie Datei ist %d %s gross\n", groesse, dateieinheit);
 		break;
 	}
-	printf("\nBitte gib deine Uploadbandbreiteneinheit an\n");	//Hier wird der User gefragt, die einheit vom Upload auszuwählen
-	printf("\nAuswahl 1 ist Kb = Kilobit");						//da dies von der jeweiligen bandbreite abhängt die verfügbar ist
+	printf("\nBitte gib deine Uploadbandbreiteneinheit an\n");				//Hier wird der User gefragt, die einheit vom Upload auszuwählen
+	printf("\nAuswahl 1 ist Kb = Kilobit");							//da dies von der jeweiligen bandbreite abhängt die verfügbar ist
 	printf("\nAuswahl 2 ist Mb = Megabit");
 	printf("\nAuswahl 3 ist Gb = Gigabit");
 	printf("\nAuswahl 4 ist Tb = Terabit");
 
 	do {
 		printf("\nDeine Auswahl ist: ");						//Hier wird wieder die eingabe überprüft damit dieser nicht 
-		scanf("%d", &upload);									//unter 1 oder über 4 geht in einer schleife welche man nur 
-		while (getchar() != '\n');								//verlassen kann wenn die Bedingung richtig ist
-		if (upload <= 0 || upload > 4)
+		scanf("%d", &upload);								//unter 1 oder über 4 geht in einer schleife welche man nur 	
+		if (upload <= 0 || upload > 4)							//verlassen kann wenn die Bedingung richtig ist
 		{
 			printf("\nBitte gib eine Zahl von 1 bis 4 nur an!");
 		}
 	} while (upload <= 0 || upload > 4);
 
 
-	printf("\nwie viel upload hast du?");						//hier wird nach der menge an verfügbarer Bandbreite gefragt
+	printf("\nwie viel upload hast du?");							//hier wird nach der menge an verfügbarer Bandbreite gefragt
 	printf("\nBandbreite betraegt: ");
 	scanf("%d", &bandbreite);
 
@@ -112,8 +110,8 @@ int main()
 	{
 
 	case 11:										//In diesen Fällen wird individuell je nach vorheriger auswahl
-		datei = groesse * 8;						//der richtige Fall angewendet um zum richtigen
-		zeit = datei / bandbreite;					//Ergebnis zu kommen
+		datei = groesse * 8;								//der richtige Fall angewendet um zum richtigen
+		zeit = datei / bandbreite;							//Ergebnis zu kommen
 		minuten = zeit / 60;
 		stunden = minuten / 60;
 		tag = stunden / 60;
