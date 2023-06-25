@@ -38,7 +38,7 @@ int main()
 
 	fp = fopen("Data_1.txt", "r");
 
-	if (fp == NULL) //Sollte Data_1.txt nicht gefunden gibt es hier eine Anleitung diese Datei zu erstellen und abzuspeichern
+	if (fp == NULL) 									//Sollte Data_1.txt nicht gefunden gibt es hier eine Anleitung diese Datei zu erstellen und abzuspeichern
 	{
 		printf("\nFehler beim auslesen von wichtigen Dateien!\n");
 		printf("\nBitte lege eine .txt Datei mit den folgenden Inhalten an und dem Namen Data_1");
