@@ -21,6 +21,22 @@ int main()
 	int dateizeile_1 = 0;
 	char dateieinheit[200];
 
+	fp = fopen("Data_1.txt", "r");
+
+	if (fp == NULL) 									//Sollte Data_1.txt nicht gefunden gibt es hier eine Anleitung diese Datei zu erstellen und abzuspeichern
+	{
+		printf("\nFehler beim auslesen von wichtigen Dateien!\n");
+		printf("\nBitte lege eine .txt Datei mit den folgenden Inhalten an und dem Namen Data_1");
+		printf("\nBitte schreibe jedes wort in eine Zeile und nicht hintereinander!\n");
+		printf("------------------");
+		printf("\nKilobyte");
+		printf("\nMegabyte");
+		printf("\nGigabyte");
+		printf("\nTerabyte\n");	
+		printf("------------------");							//Das hier ist eine Fehlermeldung mit der Anleitung Data_1.txt anzulegen
+		return 1;									//da diese Datei fehlt um im Code weiter zu kommen
+	}
+
 	printf("\nBitte waehle die Groesseneinheit aus"); 					//Hier wird der User gefragt, die einheit der Datei auszuwählen
 	printf("\nAuswahl 1 ist Kbyte = Kilobyte");		  				//Das dient dazu damit nicht Text ausgewertet werden muss
 	printf("\nAuswahl 2 ist Mbyte = Megabyte");
@@ -35,22 +51,6 @@ int main()
 			printf("\nBitte gib eine Zahl von 1 bis 4 nur an!");
 		}
 	} while (auswahl <= 0 || auswahl > 4);
-
-	fp = fopen("Data_1.txt", "r");
-
-	if (fp == NULL) 									//Sollte Data_1.txt nicht gefunden gibt es hier eine Anleitung diese Datei zu erstellen und abzuspeichern
-	{
-		printf("\nFehler beim auslesen von wichtigen Dateien!\n");
-		printf("\nBitte lege eine .txt Datei mit den folgenden Inhalten an und dem Namen Data_1");
-		printf("\nBitte schreibe jedes wort in eine Zeile und nicht hintereinander!\n");
-		printf("------------------");
-		printf("\nKilobyte");
-		printf("\nMegabyte");
-		printf("\nGigabyte");
-		printf("\nTerabyte");	
-		printf("------------------");							//Das hier ist eine Fehlermeldung mit der Anleitung Data_1.txt anzulegen
-		return 1;									//da diese Datei fehlt um im Code weiter zu kommen
-	}
 
 	while (fgets(dateieinheit, sizeof(dateieinheit), fp))
 	{
