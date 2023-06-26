@@ -24,7 +24,7 @@ int main()
 	fp = fopen("Data_1.txt", "r");
 
 	if (fp == NULL) 									//Sollte Data_1.txt nicht gefunden gibt es hier eine Anleitung diese Datei zu erstellen und abzuspeichern
-	{
+	{											//Den diese Datei fehlt um weiter im Programmcode voranzuschreiten
 		printf("\nFehler beim auslesen von wichtigen Dateien!\n");
 		printf("\nBitte lege eine .txt Datei mit den folgenden Inhalten an und dem Namen Data_1");
 		printf("\nBitte schreibe jedes wort in eine Zeile und nicht hintereinander!\n");
@@ -33,8 +33,8 @@ int main()
 		printf("\nMegabyte");
 		printf("\nGigabyte");
 		printf("\nTerabyte\n");	
-		printf("------------------");							//Das hier ist eine Fehlermeldung mit der Anleitung Data_1.txt anzulegen
-		return 1;									//da diese Datei fehlt um im Code weiter zu kommen
+		printf("------------------");							
+		return 1;									
 	}
 
 	printf("\nBitte waehle die Groesseneinheit aus"); 					//Hier wird der User gefragt, die einheit der Datei auszuwählen
